@@ -6,30 +6,21 @@ export function AppProvider({ children }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  function openSidebar() {
-    setIsSidebarOpen(true);
+  function toggleSidebar() {
+    setIsSidebarOpen(!isSidebarOpen);
   }
 
-  function closeSidebar() {
-    setIsSidebarOpen(false);
+  function toggleModal() {
+    setIsModalOpen(!isModalOpen);
   }
 
-  function openModal() {
-    setIsModalOpen(true);
-  }
-
-  function closeModal() {
-    setIsModalOpen(false);
-  }
   return (
     <AppContext.Provider
       value={{
         isModalOpen,
         isSidebarOpen,
-        openModal,
-        closeModal,
-        openSidebar,
-        closeSidebar,
+        toggleModal,
+        toggleSidebar,
       }}
     >
       {children}

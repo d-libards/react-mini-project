@@ -4,12 +4,12 @@ import { FaTimes } from 'react-icons/fa';
 import { useGlobalContext } from '../context';
 
 function Sidebar() {
-  const { isSidebarOpen, closeSidebar } = useGlobalContext();
+  const { isSidebarOpen, toggleSidebar } = useGlobalContext();
   return (
     <aside className={`sidebar ${isSidebarOpen ? 'show-sidebar' : ''}`}>
       <div className="sidebar-header">
         <img src={logo} alt="" className="logo" />
-        <button className="close-btn" onClick={closeSidebar}>
+        <button className="close-btn" onClick={toggleSidebar}>
           <FaTimes />
         </button>
       </div>
