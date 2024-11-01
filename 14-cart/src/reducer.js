@@ -39,7 +39,7 @@ function reducer(state, action) {
       return { ...state, cart: newCart };
     }
 
-    const newItem = { ...item, amount: ++item.amount };
+    const newItem = { ...item, amount: --item.amount };
     newCart.set(payload.id, newItem);
 
     return { ...state, cart: newCart };
