@@ -34,7 +34,7 @@ function reducer(state, action) {
 
     const item = newCart.get(payload.id);
 
-    if (item.amount < 1) {
+    if (item.amount === 1) {
       newCart.delete(payload.id);
       return { ...state, cart: newCart };
     }
